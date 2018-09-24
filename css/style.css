@@ -1,0 +1,137 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+body {
+	background-color: #f2f2f2;
+}
+
+header h1 {
+	text-align: center;
+	font-weight: bold;
+	background-color: #808080;
+	color: white;
+	padding: 10px;
+}
+
+#anButton {
+	width: 50%;
+	margin-left: -4px;
+	padding: 12px;
+	padding-bottom: 13px;
+	font-size: 22px;
+	border: 1px solid black;
+	color: black;
+	background-color: white;
+	transition: 0.25s;
+}
+#anButton:hover {
+	color: white;
+	background-color: black;
+	cursor: pointer;
+}
+#anButton:active {
+	color: white;
+	background-color: grey;
+	cursor: wait;
+}
+#xmlInput {
+	width: 50%;
+	padding: 10px;
+	font-size: 22px;
+	border: 1px solid black;
+	text-align: center;
+	cursor: pointer;
+	background-color: white;
+}
+
+#res {
+	width: 100%;
+	padding-top: 12px;
+}
+.block {
+	background-color: #d9d9d9;
+	font-size: 22px;
+	padding: 18px 12px;
+	width: 80%;
+	margin-left: 10%;
+	margin-bottom: 12px;
+	float:left;
+}
+.block h3 {
+	margin-bottom: 12px;
+}
+#Player1 {
+	width: 40%;
+}
+#Player2 {
+	width: 40%;
+	margin-left: 0;
+}
+#Player1Deck {
+	width: 40%;
+}
+#Player2Deck {
+	width: 40%;
+	margin-left: 0;
+}
+#BuildOrder {
+	width: 40%;
+}
+#BuildOrder2 {
+	width: 40%;
+	margin-left: 0;
+}
+.tableContainter {
+	background-color: #d9d9d9;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+thead tr td {
+	border-bottom: 3px solid white;
+}
+td {
+	padding-left: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+tr {
+	border-bottom: 1px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+    .block {
+    	width: 100%;
+    	margin-left: 0;
+    }
+    #Player1 {
+		width: 50%;
+		margin-left: 0;
+	}
+	#Player2 {
+		width: 50%;
+		margin-left: 0;
+	}
+    #Player1Deck {
+		width: 50%;
+		margin-left: 0;
+	}
+	#Player2Deck {
+		width: 50%;
+		margin-left: 0;
+	}
+	#BuildOrder {
+		width: 50%;
+		margin-left: 0;
+	}
+	#BuildOrder2 {
+		width: 50%;
+		margin-left: 0;
+	}
+}
