@@ -136,9 +136,9 @@ function doXml() {
 		//Checks witch player we are analysing
 		var p = parseInt(bOO.eq(i).attr("p")) == 1 ? player1 : player2;
 		
-		//If the action is Die och Procude we won't print it to the build order
+		//If the action is Die, Procude or Sell we won't print it to the build order
 		var e = bOO.eq(i).attr("e");
-		if (e == "Die" || e == "Produce") {
+		if (e == "Die" || e == "Produce" || e == "Sell") {
 			//continue;
 			print = false;
 		}
@@ -159,12 +159,8 @@ function doXml() {
 		}
 
 		//Creates the string to add to the Build Order table
-		if (e == "Sell") {
-			var buildOrder = "<tr><td>" + t + "</td><td>Sold - " + d + "</td><td><img height='50px' width='50px' src='" + imageFile + "'></td</tr>";
-		} else {
-			var buildOrder = "<tr><td>" + t + "</td><td>" + d + "</td><td><img height='50px' width='50px' src='" + imageFile + "'></td</tr>";
-		}
-		
+		var buildOrder = "<tr><td>" + t + "</td><td>" + d + "</td><td><img height='50px' width='50px' src='" + imageFile + "'></td</tr>";
+
 		//Add the build order string to the tables
 		if (p == player1 && print) {
 			$("#BuildOrder tbody tr").last().after(buildOrder);
