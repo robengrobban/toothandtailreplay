@@ -1,129 +1,134 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tooth and Tail replay analysis</title>
+	<head>
+		<title>Tooth and Tail replay analysis</title>
 
-	<meta charset="utf-8">
-	<meta name="description" content="Tooth and tail replay analyse tool. You can use this to make analysis of your replays.">
-	<meta name="keywords" content="Tooth and tail, Replay, Analysis, Analyse">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-	<link rel="icon" href="img/favicon.png">
-</head>
-<body onresize="fix(), checkDrawChart()">
-	
-	<header><h1>Choose a replay file!</h1></header>
+		<meta charset="utf-8">
+		<meta name="description" content="Tooth and tail replay analyse tool. You can use this to make analysis of your replays.">
+		<meta name="keywords" content="Tooth and tail, Replay, Analysis, Analyse">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<link rel="icon" href="img/favicon.png">
 
-	<input id="xmlInput" type="file">
-	<button onclick="checkXml()" id="anButton">Analyse</button>
-	
-	<section id="res">
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body onresize="fix(), checkDrawChart()">
+		
+		<header><h1>Choose a replay file!</h1></header>
 
-		<div id="MatchType" class="block">
-			<h3>Match type</h3>
-			<p></p>
-		</div>
+		<input id="xmlInput" type="file">
+		<button onclick="checkXml()" id="anButton">Analyse</button>
+		
+		<section id="res">
 
-		<div id="MatchTime" class="block">
-			<h3>Match time</h3>
-			<p></p>
-		</div>
+			<div id="MatchType" class="block">
+				<h3>Match type</h3>
+				<p></p>
+			</div>
 
-		<div id="WorldSeed" class="block">
-			<h3>World seed</h3>
-			<p></p>
-		</div>
+			<div id="MatchTime" class="block">
+				<h3>Match time</h3>
+				<p></p>
+			</div>
 
-		<div id="Winnter" class="block">
-			<h3>Winner</h3>
-			<p></p>			
-		</div>
+			<div id="WorldSeed" class="block">
+				<h3>World seed</h3>
+				<p></p>
+			</div>
 
-		<div id="Player1" class="block">
-			<h3>Player 1</h3>
-			<p></p>
-		</div>
-		<div id="Player2" class="block">
-			<h3>Player 2</h3>
-			<p></p>
-		</div>
-		<div id="Player1Deck" class="block">
-			<h3>Deck</h3>
-			<table>
-				<thead>
-					<tr>
-						<td>Unit</td>
-						<td>Icon</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr></tr>
-				</tbody>
-			</table>
-		</div>
-		<div id="Player2Deck" class="block">
-			<h3>Deck</h3>
-			<table>
-				<thead>
-					<tr>
-						<td>Unit</td>
-						<td>Icon</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr></tr>
-				</tbody>
-			</table>
-		</div>
+			<div id="Winnter" class="block">
+				<h3>Winner</h3>
+				<p></p>			
+			</div>
 
-		<div id="BuildOrder" class="block">
-			<h3>Build order</h3>
-			<table>
-				<thead>
-					<tr>
-						<td>Time</td>
-						<td>Build</td>
-						<td>Icon</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr></tr>
-				</tbody>
-			</table>
-		</div>
-		<div id="BuildOrder2" class="block">
-			<h3>Build order</h3>
-			
-			<table>
-				<thead>
-					<tr>
-						<td>Time</td>
-						<td>Build</td>
-						<td>Icon</td>
-					</tr>
-				</thead>
-				<tbody>
-					<tr></tr>
-				</tbody>
-			</table>
-		</div>
+			<div id="Player1" class="block">
+				<h3>Player 1</h3>
+				<p></p>
+			</div>
+			<div id="Player2" class="block">
+				<h3>Player 2</h3>
+				<p></p>
+			</div>
+			<div id="Player1Deck" class="block">
+				<h3>Deck</h3>
+				<table>
+					<thead>
+						<tr>
+							<td>Unit</td>
+							<td>Icon</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="Player2Deck" class="block">
+				<h3>Deck</h3>
+				<table>
+					<thead>
+						<tr>
+							<td>Unit</td>
+							<td>Icon</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+			</div>
 
-		<div id="ArmyChart" class="block">
-			<h3>Army Quantity</h3>
-			<div id="theChart"></div>
-		</div>
+			<div id="BuildOrder" class="block">
+				<h3>Build order</h3>
+				<table>
+					<thead>
+						<tr>
+							<td>Time</td>
+							<td>Build</td>
+							<td>Icon</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="BuildOrder2" class="block">
+				<h3>Build order</h3>
+				
+				<table>
+					<thead>
+						<tr>
+							<td>Time</td>
+							<td>Build</td>
+							<td>Icon</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+					</tbody>
+				</table>
+			</div>
 
-		<div id="IncomeChart" class="block">
-			<h3>Income Structures</h3>
-			<div id="theOtherChart"></div>
-		</div>
+			<div id="ArmyChart" class="block">
+				<h3>Army Quantity</h3>
+				<div id="theChart"></div>
+			</div>
 
-	</section>
+			<div id="IncomeChart" class="block">
+				<h3>Income Structures</h3>
+				<div id="theOtherChart"></div>
+			</div>
 
-</body>
-	<script type="text/javascript" src="js/script.js"></script>
+		</section>
+
+		<footer>
+			<h2>Tool by Robert Englund</h2>
+		</footer>
+
+	</body>
 </html>

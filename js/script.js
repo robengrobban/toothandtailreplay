@@ -49,16 +49,15 @@ function checkXml() {
 function doXml() {
 
 	//xmlString = $("#xmlInfo").val(),
-	xmlDoc = $.parseXML(xmlString),
-	$xml = $(xmlDoc),
-	$matchType = $xml.find( "MissionType" ) //Match Type
-	$matchTime = $xml.find( "MatchTime" ) //Match Time
-	$matchPlayer = $xml.find( "Identity" ) //Match Player
-	$matchWinnerTeam = $xml.find( "WinningTeam" ) //Match Winner Team
-	$matchDeck = $xml.find( "Cards" ) //Match Deck
-	$matchBuild = $xml.find( "GameEvents" ) //Build Orders
-	$worldSeed = $xml.find( "WorldSeed" )  //World Seed
-	;
+	xmlDoc = $.parseXML(xmlString);
+	$xml = $(xmlDoc);
+	$matchType = $xml.find( "MissionType" ); //Match Type
+	$matchTime = $xml.find( "MatchTime" ); //Match Time
+	$matchPlayer = $xml.find( "Identity" ); //Match Player
+	$matchWinnerTeam = $xml.find( "WinningTeam" ); //Match Winner Team
+	$matchDeck = $xml.find( "Cards" ); //Match Deck
+	$matchBuild = $xml.find( "GameEvents" ); //Build Orders
+	$worldSeed = $xml.find( "WorldSeed" );  //World Seed
 
 	//Match Type
 	var matchTypeText =  $matchType.text();
@@ -108,7 +107,7 @@ function doXml() {
 	$("#Player1").children("h3").text(player1);
 	$("#Player2").children("p").html("ID: " + player2ID);
 	$("#Player2").children("h3").text(player2);
-	$("#Winnter").children("p").text( winningTeam == 1 ? player1 : player2 );
+	$("#Winnter").children("p").text( winningTeam == 0 ? player1 : player2 );
 	//------------------------------------------
 
 	//Empty Build Order and chart data
@@ -134,7 +133,7 @@ function doXml() {
 		var print = true;
 
 		//Checks witch player we are analysing
-		var p = parseInt(bOO.eq(i).attr("p")) == 1 ? player1 : player2;
+		var p = parseInt(bOO.eq(i).attr("p")) == 0 ? player1 : player2;
 		
 		//If the action is Die, Procude or Sell we won't print it to the build order
 		var e = bOO.eq(i).attr("e");

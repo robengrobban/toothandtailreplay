@@ -13,19 +13,26 @@ header h1 {
 	font-weight: bold;
 	background-color: #808080;
 	color: white;
-	padding: 10px;
+	padding: 36px;
+	font-size: 48px;
+	font-weight: bold;
+	letter-spacing: 2px;
 }
 
 #anButton {
 	width: 50%;
 	margin-left: -4px;
-	padding: 12px;
-	padding-bottom: 13px;
+	padding: 22px;
+	padding-bottom: 23px;
 	font-size: 22px;
 	border: 1px solid black;
 	color: black;
 	background-color: white;
-	transition: 0.25s;
+	transition: background-color 0.25s, color 0.25s;
+	-o-transition: background-color 0.25s, color 0.25s;
+	-webkit-transition: background-color 0.25s, color 0.25s;
+	-ms-transition: background-color 0.25s, color 0.25s;
+	-moz-transition: background-color 0.25s, color 0.25s;
 }
 #anButton:hover {
 	color: white;
@@ -39,7 +46,7 @@ header h1 {
 }
 #xmlInput {
 	width: 50%;
-	padding: 10px;
+	padding: 20px;
 	font-size: 22px;
 	border: 1px solid black;
 	text-align: center;
@@ -48,40 +55,49 @@ header h1 {
 }
 
 #res {
-	width: 100%;
+	width: 85%;
+	margin-left: 7.5%;
+	margin-right: 7.5%;
 	padding-top: 12px;
+	overflow: hidden;
+	position: relative;
+	display: block;
 }
 .block {
 	background-color: #d9d9d9;
-	font-size: 22px;
-	padding: 18px 12px;
-	width: 80%;
-	margin-left: 10%;
+	font-size: 24px;
+	padding: 22px 18px;
+	width: 100%;
 	margin-bottom: 12px;
-	float:left;
+	float: left;
+	transition: 0.25s;
+	-o-transition: 0.25s;
+	-webkit-transition: 0.25s;
+	-ms-transition: 0.25s;
+	-moz-transition: 0.25s;
 }
 .block h3 {
 	margin-bottom: 12px;
 }
 #Player1 {
-	width: 40%;
+	width: 50%;
 }
 #Player2 {
-	width: 40%;
+	width: 50%;
 	margin-left: 0;
 }
 #Player1Deck {
-	width: 40%;
+	width: 50%;
 }
 #Player2Deck {
-	width: 40%;
+	width: 50%;
 	margin-left: 0;
 }
 #BuildOrder {
-	width: 40%;
+	width: 50%;
 }
 #BuildOrder2 {
-	width: 40%;
+	width: 50%;
 	margin-left: 0;
 }
 .tableContainter {
@@ -105,10 +121,23 @@ tr {
 	border-bottom: 1px solid black;
 }
 
+footer {
+	width: 100%;
+	padding: 48px;
+	background-color: #808080;
+}
+footer h2 {
+	font-size: 36px;
+	color: #ffffff;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
 @media only screen and (max-width: 768px) {
-    .block {
+    #res {
     	width: 100%;
     	margin-left: 0;
+    	margin-right: 0;
     }
     #Player1 {
 		width: 50%;
